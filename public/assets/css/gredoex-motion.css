@@ -60,12 +60,42 @@
 }
 
 .gx-asset-ticker .gx-asset-chip {
-  min-width: 88px;
-  height: 44px;
-  padding: 0 18px;
+  gap: 8px;
+  min-width: 104px;
+  height: 48px;
+  padding: 0 16px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.18) !important;
   background: rgba(255, 255, 255, 0.04);
+}
+
+.gx-asset-ticker .gx-asset-chip i,
+.gx-asset-ticker .gx-asset-chip .gx-asset-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  font-size: 14px;
+  line-height: 1;
+  color: #13dc66;
+}
+
+.gx-asset-ticker .gx-asset-chip .gx-asset-mark {
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 800;
+  color: #000306;
+}
+
+.gx-asset-ticker .gx-asset-chip .gx-asset-mark-usdt {
+  background: #26a17b;
+}
+
+.gx-asset-ticker .gx-asset-chip .gx-asset-mark-usdc {
+  background: #2775ca;
+  color: #fff;
 }
 
 .gx-asset-ticker .gx-asset-chip span {
@@ -276,16 +306,16 @@
 }
 
 /* Integrations */
-.integrated_wrapper img {
+.integrated_wrapper .site_logo img {
   transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.integrated_wrapper img:hover {
-  transform: scale(1.08);
 }
 
 .integrated_wrapper .site_logo {
   animation: gx-breathe 4.8s ease-in-out infinite;
+}
+
+.integrated_wrapper .gx-integration-chip {
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* Buttons */
@@ -355,7 +385,7 @@
     display: block;
     position: relative;
     width: 100%;
-    min-height: 340px;
+    min-height: 380px;
     margin-top: 8px;
     overflow: hidden;
   }
@@ -379,9 +409,9 @@
     display: block !important;
     position: absolute;
     left: auto;
-    right: -22%;
-    bottom: 8px;
-    width: min(320px, 78vw);
+    right: -34%;
+    bottom: 0;
+    width: min(440px, 108vw);
     max-width: none;
     margin: 0;
     transform: none;
@@ -464,13 +494,13 @@
 
 @media (max-width: 575px) {
   .hero_online_banking.has-globe > .gx-hero-visual {
-    min-height: 300px;
+    min-height: 360px;
   }
 
   .hero_online_banking.has-globe .hero_hand_image {
-    width: min(280px, 82vw);
-    right: -28%;
-    bottom: 4px;
+    width: min(400px, 118vw);
+    right: -42%;
+    bottom: -6px;
   }
 }
 

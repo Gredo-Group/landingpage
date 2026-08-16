@@ -132,28 +132,35 @@ export function LandingPage() {
               <div className="badge text-uppercase text-primary bg-primary-subtle">Currencies · Cryptos</div>
               <div className="swiper-wrapper">
                 {[
-                  "USD",
-                  "NGN",
-                  "EUR",
-                  "GBP",
-                  "GHS",
-                  "BTC",
-                  "ETH",
-                  "USDT",
-                  "USDC",
-                  "USD",
-                  "NGN",
-                  "EUR",
-                  "GBP",
-                  "GHS",
-                  "BTC",
-                  "ETH",
-                  "USDT",
-                  "USDC",
+                  { code: "USD", icon: "fa-solid fa-dollar-sign" },
+                  { code: "NGN", icon: "fa-solid fa-naira-sign" },
+                  { code: "EUR", icon: "fa-solid fa-euro-sign" },
+                  { code: "GBP", icon: "fa-solid fa-sterling-sign" },
+                  { code: "GHS", icon: "fa-solid fa-cedi-sign" },
+                  { code: "BTC", icon: "fa-brands fa-bitcoin" },
+                  { code: "ETH", icon: "fa-brands fa-ethereum" },
+                  { code: "USDT", icon: "tether" },
+                  { code: "USDC", icon: "usdc" },
+                  { code: "USD", icon: "fa-solid fa-dollar-sign" },
+                  { code: "NGN", icon: "fa-solid fa-naira-sign" },
+                  { code: "EUR", icon: "fa-solid fa-euro-sign" },
+                  { code: "GBP", icon: "fa-solid fa-sterling-sign" },
+                  { code: "GHS", icon: "fa-solid fa-cedi-sign" },
+                  { code: "BTC", icon: "fa-brands fa-bitcoin" },
+                  { code: "ETH", icon: "fa-brands fa-ethereum" },
+                  { code: "USDT", icon: "tether" },
+                  { code: "USDC", icon: "usdc" },
                 ].map((asset, index) => (
-                  <div className="swiper-slide" key={`${asset}-${index}`}>
+                  <div className="swiper-slide" key={`${asset.code}-${index}`}>
                     <div className="image_block border gx-asset-chip">
-                      <span>{asset}</span>
+                      {asset.icon === "tether" ? (
+                        <span className="gx-asset-mark gx-asset-mark-usdt" aria-hidden="true">₮</span>
+                      ) : asset.icon === "usdc" ? (
+                        <span className="gx-asset-mark gx-asset-mark-usdc" aria-hidden="true">$</span>
+                      ) : (
+                        <i className={asset.icon} aria-hidden="true"></i>
+                      )}
+                      <span>{asset.code}</span>
                     </div>
                   </div>
                 ))}
@@ -681,21 +688,24 @@ export function LandingPage() {
         <section className="integrated_section section_space">
           <div className="container">
             <div className="heading_block style_2 text-center">
-              <div className="badge text-uppercase text-dark bg-dark-subtle">Integrated</div>
+              <div className="badge text-uppercase text-dark bg-dark-subtle">Ready now</div>
               <h2 className="heading_text mb-0">
                 Mobile wallet integrations
               </h2>
+              <p className="heading_description mb-0 mt-3">
+                Production-ready rails you can use today — bills, swaps, cards, and custody in one wallet.
+              </p>
             </div>
 
             <div className="integrated_wrapper">
               <ul className="unordered_list justify-content-center">
                 <li>
-                  <img src="/assets/images/integrated/integrated_logo_1.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">Airtime</span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <img src="/assets/images/integrated/integrated_logo_2.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">Mobile Data</span>
                   <svg width="194" height="74" viewBox="0 0 194 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M168.5 73.5V26C168.5 25.4477 168.052 25 167.5 25H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M193 73.5V2C193 1.44772 192.552 1 192 1H0.5" stroke="#DBDBDB" strokeDasharray="6 6"/>
@@ -706,17 +716,17 @@ export function LandingPage() {
                     <path className="path" d="M25.5 73.5V26C25.5 25.4477 25.9477 25 26.5 25H194" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M1 73.5V2C1 1.44772 1.44772 1 2 1H193.5" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <img src="/assets/images/integrated/integrated_logo_3.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">Electricity</span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path_2" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path_2" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <img src="/assets/images/integrated/integrated_logo_4.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">Internet</span>
                 </li>
               </ul>
               <ul className="unordered_list justify-content-center">
                 <li>
-                  <img src="/assets/images/integrated/integrated_logo_5.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">Crypto Swaps</span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
@@ -730,17 +740,17 @@ export function LandingPage() {
                     <path className="path_2" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path_2" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <img src="/assets/images/integrated/integrated_logo_6.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">OTC Desk</span>
                 </li>
               </ul>
               <ul className="unordered_list justify-content-center">
                 <li>
-                  <img src="/assets/images/integrated/integrated_logo_7.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">Dollar Cards</span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <img src="/assets/images/integrated/integrated_logo_8.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">Virtual Accounts</span>
                   <svg width="194" height="73" viewBox="0 0 194 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M168.5 0V47.5C168.5 48.0523 168.052 48.5 167.5 48.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M193 0V71.5C193 72.0523 192.552 72.5 192 72.5H0.5" stroke="#DBDBDB" strokeDasharray="6 6"/>
@@ -751,12 +761,12 @@ export function LandingPage() {
                     <path className="path" d="M25.5 0V47.5C25.5 48.0523 25.9477 48.5 26.5 48.5H194" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M1 0V71.5C1 72.0523 1.44772 72.5 2 72.5H193.5" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <img src="/assets/images/integrated/integrated_logo_9.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">Multi-currency</span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path_2" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path_2" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <img src="/assets/images/integrated/integrated_logo_10.webp" alt="Integrated Logo" />
+                  <span className="gx-integration-chip">MPC Vault</span>
                 </li>
               </ul>
             </div>
