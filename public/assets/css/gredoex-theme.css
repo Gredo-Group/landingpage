@@ -1,0 +1,123 @@
+/* GredoEx color theme
+   Source: crypto-fintech-mobile/src/theme/colors.ts
+   Navy #000E2B · Green #13DC66 · Deep blue #013060 · Light blue #D9EDFF · Black #000306
+================================================== */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+.page_wrapper,
+.footer_layout_2 {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.online_banking .site_header .site_logo .site_link {
+  max-width: 148px;
+  display: block;
+}
+
+.online_banking .site_header .site_logo img {
+  width: 100%;
+  height: auto;
+}
+
+.online_banking .funfact_block.style_2 .funfact_value {
+  font-size: clamp(28px, 3.2vw, 42px);
+  letter-spacing: -0.03em;
+}
+
+.online_banking .author_image.gx-avatar-initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #000306;
+  background: #13dc66;
+}
+
+.online_banking {
+  --gx-black: #000306;
+  --gx-navy: #000e2b;
+  --gx-deep-blue: #013060;
+  --gx-green: #13dc66;
+  --gx-accent-green: #2ed800;
+  --gx-green-pressed: #0fb856;
+  --gx-light-blue: #d9edff;
+  --gx-surface-green: #e9fbf1;
+  --gx-text-muted: #667085;
+  --gx-border: #e5eaf0;
+
+  --bs-heading-color: var(--gx-black);
+  --bs-primary: var(--gx-green);
+  --bs-primary-rgb: 19, 220, 102;
+  --bs-dark: var(--gx-navy);
+  --bs-dark-rgb: 0, 14, 43;
+  --bs-secondary: var(--gx-deep-blue);
+  --bs-secondary-rgb: 1, 48, 96;
+  --bs-light: #f4f8fc;
+  --bs-light-rgb: 244, 248, 252;
+  --bs-border-color: var(--gx-border);
+  --bs-body-color: var(--gx-text-muted);
+  --bs-body-color-rgb: 102, 112, 133;
+  --bs-primary-bg-subtle: rgba(19, 220, 102, 0.14);
+  --bs-dark-bg-subtle: rgba(0, 14, 43, 0.08);
+}
+
+.online_banking .btn.bg-primary,
+.online_banking .btn.bg-primary .btn_label {
+  color: var(--gx-black);
+}
+
+.online_banking .ob-header-btn .btn .btn_icon {
+  color: var(--gx-green);
+}
+
+.online_banking .rating_block .rating_icons {
+  color: var(--gx-green);
+}
+
+.online_banking .social_icons_block a:before {
+  background: linear-gradient(0deg, var(--gx-deep-blue), var(--gx-green));
+}
+
+.online_banking .online_banking_features .imagebox_block {
+  --bs-primary-rgb: 233, 251, 241;
+  --bs-success-rgb: 217, 237, 255;
+  --bs-warning-rgb: 232, 242, 252;
+  --bs-light-rgb: 244, 248, 252;
+  --bs-info-rgb: 226, 247, 234;
+}
+
+.online_banking .text-primary {
+  color: var(--gx-green) !important;
+}
+
+.online_banking .bg-primary {
+  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+
+.online_banking .bg-dark {
+  background-color: var(--gx-navy) !important;
+}
+
+.online_banking_process > li .appp_btn {
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding-top: 8px;
+}
+
+.online_banking_process > li .appp_btn .btn {
+  padding: 12px 14px;
+  font-size: 13px;
+  white-space: nowrap;
+}

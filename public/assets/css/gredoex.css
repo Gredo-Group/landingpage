@@ -1,0 +1,1030 @@
+/* GredoEx design system
+   Source of truth: crypto-fintech-mobile/src/theme
+   Fonts loaded via next/font (Anton + Montserrat)
+================================================== */
+
+:root {
+  --color-black: #000306;
+  --color-primary: #000e2b;
+  --color-secondary: #013060;
+  --color-accent: #13dc66;
+  --color-accent-bright: #2ed800;
+  --color-action: #13dc66;
+  --color-action-pressed: #0fb856;
+  --color-action-text: #000306;
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #d9edff;
+  --color-surface-muted: #f4f8fc;
+  --color-surface-green: #e9fbf1;
+  --color-text: #000306;
+  --color-text-muted: #667085;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-muted: #d9edff;
+  --color-border: #e5eaf0;
+  --color-border-dark: #1e3a5f;
+  --color-danger: #d92d20;
+  --color-warning: #b54708;
+  --color-disabled: #98a2b3;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-full: 999px;
+  --shadow-soft: 0 8px 30px rgba(0, 14, 43, 0.08);
+  --shadow-nav: 0 8px 28px rgba(0, 14, 43, 0.12);
+  --gx-gradient: linear-gradient(135deg, #000e2b 0%, #013060 100%);
+  --gx-accent-gradient: linear-gradient(90deg, #00a3ff, #13dc66);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+.gredoex {
+  --bs-body-font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  --bs-heading-font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  --bs-body-font-size: 16px;
+  --bs-body-color: var(--color-text-muted);
+  --bs-body-color-rgb: 102, 112, 133;
+  --bs-heading-color: var(--color-text);
+  --bs-body-bg: var(--color-background);
+  --bs-primary: var(--color-accent);
+  --bs-primary-rgb: 19, 220, 102;
+  --bs-dark: var(--color-primary);
+  --bs-dark-rgb: 0, 14, 43;
+  --bs-secondary: var(--color-secondary);
+  --bs-secondary-rgb: 1, 48, 96;
+  --bs-light: var(--color-surface-muted);
+  --bs-light-rgb: 244, 248, 252;
+  --bs-border-color: var(--color-border);
+  --bs-border-radius: var(--radius-md);
+  --bs-border-radius-sm: var(--radius-sm);
+  --bs-border-radius-lg: 20px;
+  --bs-primary-bg-subtle: rgba(19, 220, 102, 0.12);
+  --bs-dark-bg-subtle: rgba(0, 14, 43, 0.08);
+  color: var(--color-text-muted);
+  background: var(--color-background);
+  overflow-x: hidden;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+}
+
+.gredoex h1,
+.gredoex h2,
+.gredoex h3,
+.gredoex h4,
+.gredoex h5,
+.gredoex h6,
+.gredoex .heading_text,
+.gredoex .imagebox_title,
+.gredoex .iconbox_title,
+.gredoex .funfact_title,
+.gredoex .footer_info_title,
+.gredoex .author_name,
+.gredoex .title {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.03em;
+}
+
+.gredoex .page_wrapper {
+  overflow-x: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 2000;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-action-text);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.gredoex :focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.gredoex a:focus:not(:focus-visible),
+.gredoex button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.gredoex .btn {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  border-radius: var(--radius-sm);
+  padding: 16px 28px;
+  min-height: 52px;
+}
+
+.gredoex .btn.bg-primary,
+.gredoex .gx-btn-primary {
+  background: var(--color-accent) !important;
+  color: var(--color-action-text) !important;
+}
+
+.gredoex .btn.bg-primary:hover,
+.gredoex .gx-btn-primary:hover {
+  background: var(--color-action-pressed) !important;
+  color: var(--color-action-text) !important;
+  transform: translateY(-1px);
+}
+
+.gredoex .gx-btn-secondary,
+.gredoex .btn-outline-light {
+  border: 1.5px solid rgba(217, 237, 255, 0.55);
+  color: var(--color-text-on-dark);
+  background: transparent;
+}
+
+.gredoex .gx-btn-secondary:hover,
+.gredoex .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-on-dark);
+  border-color: var(--color-accent);
+}
+
+.gredoex .gx-btn-dark {
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+  border: 0;
+}
+
+.gredoex .gx-btn-dark:hover {
+  background: var(--color-secondary);
+  color: var(--color-text-on-dark);
+}
+
+.gredoex .gx-btn-ghost {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 1.5px solid var(--color-primary);
+}
+
+.gredoex .gx-btn-ghost:hover {
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.gredoex .ob-header-btn .btn .btn_icon {
+  color: var(--color-accent);
+}
+
+.gredoex .site_header.header_layout_1 {
+  padding: 18px 0;
+}
+
+.gredoex .site_header .site_logo .site_link {
+  max-width: 148px;
+  display: block;
+}
+
+.gredoex .site_header .site_logo img {
+  width: 100%;
+  height: auto;
+}
+
+.gredoex .main_menu_list {
+  gap: 28px;
+}
+
+.gredoex .main_menu_list > li > a {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.gredoex .header_layout_1 .stricked-menu {
+  padding: 10px 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-nav);
+}
+
+.gredoex .stricked-menu .main_menu_list > li > a {
+  color: var(--color-primary);
+}
+
+.gredoex .stricked-menu .gx-btn-nav {
+  background: var(--color-accent);
+  color: var(--color-action-text);
+  border: 0;
+}
+
+.gredoex .mobile_menu_btn {
+  color: var(--color-text-on-dark);
+  background-color: var(--color-secondary);
+  border: 0;
+}
+
+.gredoex .stricked-menu .mobile_menu_btn {
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+
+.gredoex .gx-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-text-on-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 1px rgba(19, 220, 102, 0.45), 0 0 18px rgba(19, 220, 102, 0.18);
+}
+
+.gredoex .gx-badge-light {
+  background: var(--color-surface-elevated);
+  color: var(--color-secondary);
+  box-shadow: none;
+}
+
+.gredoex .heading_block.style_2 .heading_text {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.gredoex .heading_block .heading_description {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.gredoex .hero_online_banking {
+  padding: 168px 0 0;
+  background-color: var(--color-primary);
+  background-image: url("../images/backgrounds/hero_bg_noise.webp");
+}
+
+.gredoex .hero_online_banking .hero_title {
+  font-family: var(--font-anton), "Anton", sans-serif;
+  font-weight: 400;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 22px 0 20px;
+  max-width: 720px;
+}
+
+.gredoex .hero_online_banking .hero_title .gx-accent {
+  color: var(--color-accent);
+}
+
+.gredoex .hero_online_banking p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 560px;
+  color: var(--color-text-on-dark-muted);
+}
+
+.gredoex .hero_online_banking .btns_group {
+  gap: 16px;
+  padding: 28px 0 40px;
+}
+
+.gredoex .gx-store-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.gredoex .gx-store-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(217, 237, 255, 0.28);
+  color: var(--color-text-on-dark);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.gredoex .gx-store-links a small {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.72;
+}
+
+.gredoex .gx-store-links a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-on-dark);
+}
+
+.gredoex .gx-hero-visual-mobile {
+  display: none;
+}
+
+.gredoex .ob_hero_img img,
+.gredoex .hero_hand_image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gx-trust {
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  padding: 28px 0;
+}
+
+.gx-trust-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gx-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+}
+
+.gx-trust-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-green);
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.gx-trust-item span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.3;
+}
+
+.gx-products .imagebox_block {
+  height: 100%;
+  padding: 32px 28px 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface) !important;
+  box-shadow: none;
+}
+
+.gx-products .imagebox_block.gx-card-navy {
+  background: var(--color-primary) !important;
+}
+
+.gx-products .imagebox_block.gx-card-navy .imagebox_title,
+.gx-products .imagebox_block.gx-card-navy p {
+  color: var(--color-text-on-dark);
+}
+
+.gx-products .imagebox_block.gx-card-blue {
+  background: var(--color-surface-elevated) !important;
+}
+
+.gx-products .imagebox_block.gx-card-green {
+  background: var(--color-surface-green) !important;
+}
+
+.gx-products .imagebox_content {
+  margin-bottom: 24px;
+  max-width: none;
+}
+
+.gx-products .imagebox_title {
+  font-size: 22px;
+  line-height: 1.25;
+  max-width: none;
+  margin: 20px 0 8px;
+}
+
+.gx-products .imagebox_block p {
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.gx-products .imagebox_icon {
+  width: 52px;
+  height: 52px;
+  box-shadow: none;
+  border: 1px solid var(--color-border);
+}
+
+.gx-products .image_block {
+  height: 180px;
+}
+
+.gx-products .col-lg-4 .imagebox_block .image_block {
+  height: 160px;
+  margin: 0;
+}
+
+.gx-split {
+  overflow: hidden;
+}
+
+.gx-split .gx-media {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-surface-muted);
+  min-height: 420px;
+  aspect-ratio: 4 / 5;
+}
+
+.gx-split .gx-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gx-feature-list {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gx-feature-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.gx-feature-list li i {
+  color: var(--color-accent);
+  margin-top: 3px;
+}
+
+.gx-asset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 0;
+}
+
+.gx-asset {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.gx-asset i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.gx-otc {
+  background: var(--color-black);
+  color: var(--color-text-on-dark-muted);
+}
+
+.gx-otc .heading_text,
+.gx-otc h3 {
+  color: var(--color-text-on-dark);
+}
+
+.gx-otc .heading_description {
+  color: var(--color-text-on-dark-muted);
+}
+
+.gx-otc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gx-otc-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-dark);
+  background: var(--color-primary);
+  min-height: 180px;
+}
+
+.gx-otc-card h3 {
+  font-size: 18px;
+  margin: 16px 0 8px;
+}
+
+.gx-otc-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.gx-otc .gx-media {
+  background: var(--color-primary);
+  min-height: 360px;
+  aspect-ratio: 5 / 4;
+}
+
+.gx-security-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.gx-security-card {
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.gx-security-card h3 {
+  font-size: 18px;
+  margin: 14px 0 8px;
+}
+
+.gx-security-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.gx-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-elevated);
+  color: var(--color-secondary);
+}
+
+.gredoex .ob_process_section {
+  background-color: var(--color-primary);
+  padding-bottom: 140px;
+}
+
+.gredoex .online_banking_process {
+  border-color: rgba(19, 220, 102, 0.35);
+  background: transparent;
+}
+
+.gredoex .online_banking_process > li {
+  padding: 36px 22px;
+}
+
+.gredoex .online_banking_process > li:not(:last-child) {
+  border-color: rgba(19, 220, 102, 0.25);
+}
+
+.gredoex .online_banking_process .serial_number {
+  color: var(--color-accent);
+  font-family: var(--font-anton), "Anton", sans-serif;
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
+}
+
+.gredoex .online_banking_process .title {
+  color: var(--color-text-on-dark);
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.gredoex .online_banking_process p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.gredoex .online_banking_process > li.bg-primary {
+  background: var(--color-accent) !important;
+}
+
+.gredoex .online_banking_process > li.bg-primary .title,
+.gredoex .online_banking_process > li.bg-primary p {
+  color: var(--color-action-text) !important;
+}
+
+.gredoex .appstore_section {
+  background-color: var(--color-surface-muted);
+  background-image: none;
+  padding: 80px 0 0;
+  overflow: hidden;
+}
+
+.gredoex .appstore_section .app_image {
+  text-align: center;
+}
+
+.gredoex .appstore_section .app_image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gx-app-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin: 24px 0 0;
+}
+
+.gx-app-points li {
+  display: flex;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 14px;
+}
+
+.gx-app-points i {
+  color: var(--color-accent);
+}
+
+.gx-story {
+  background: var(--color-surface-muted);
+}
+
+.gx-story-copy p {
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  color: var(--color-text);
+}
+
+.gx-story-copy p.gx-emphasis {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.gx-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gx-pillar {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-secondary);
+  background: #f7fbff;
+  color: var(--color-text);
+  font-weight: 700;
+  text-align: center;
+}
+
+.gx-pillar.is-accent {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-on-dark);
+}
+
+.gx-pillar.is-navy {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-text-on-dark);
+}
+
+.gx-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gx-why-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  min-height: 170px;
+}
+
+.gx-why-card h3 {
+  font-size: 17px;
+  margin: 12px 0 8px;
+}
+
+.gx-why-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.gredoex .review_section {
+  padding-bottom: 0;
+}
+
+.gredoex .online_banking_review {
+  background: var(--color-primary) !important;
+  border: 1px solid rgba(19, 220, 102, 0.35);
+  border-radius: 20px;
+  padding: 48px;
+}
+
+.gredoex .review_comment {
+  color: var(--color-text-on-dark-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.gredoex .carousel_arrows button {
+  color: var(--color-text-on-dark);
+}
+
+.gx-faq .accordion.style_2 .accordion-item {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-md) !important;
+  padding: 8px 22px;
+  margin-bottom: 12px;
+}
+
+.gx-faq .accordion.style_2 .accordion-item:has([aria-expanded="true"]) {
+  box-shadow: var(--shadow-soft);
+  border-color: var(--color-secondary);
+}
+
+.gx-faq .accordion-item .accordion-button {
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.4;
+}
+
+.gx-faq .accordion-body {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.65;
+  padding-bottom: 16px;
+}
+
+.gx-final {
+  background: var(--gx-gradient);
+  color: var(--color-text-on-dark-muted);
+  position: relative;
+  overflow: hidden;
+}
+
+.gx-final .heading_text {
+  color: var(--color-text-on-dark);
+}
+
+.gx-final .heading_description {
+  color: var(--color-text-on-dark-muted);
+}
+
+.gx-final-media {
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 280px;
+  background: var(--color-primary);
+}
+
+.gx-final-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gredoex .site_footer.footer_layout_2 {
+  background-color: var(--color-primary);
+  background-image: url("../images/backgrounds/hero_bg_noise.webp");
+}
+
+.gredoex .site_footer,
+.gredoex .site_footer a,
+.gredoex .site_footer p,
+.gredoex .site_footer .footer_info_title {
+  color: var(--color-text-on-dark-muted);
+}
+
+.gredoex .site_footer .footer_info_title {
+  color: var(--color-text-on-dark);
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.gredoex .site_footer a:hover {
+  color: var(--color-accent);
+}
+
+.gredoex .footer_bottom {
+  padding-top: 24px;
+}
+
+.gredoex .copyright_text {
+  font-size: 13px;
+}
+
+.gx-legal-note {
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 820px;
+  margin-top: 18px;
+  color: rgba(217, 237, 255, 0.7);
+}
+
+.gx-footer-brand {
+  max-width: 148px;
+  margin-bottom: 16px;
+}
+
+.gx-footer-brand img {
+  width: 100%;
+  height: auto;
+}
+
+.gredoex .backtotop a {
+  background: var(--color-accent);
+  color: var(--color-action-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gredoex *,
+  .gredoex *::before,
+  .gredoex *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 1660px) {
+  .gredoex .site_header .btns_group {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .gx-trust-list,
+  .gx-why-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gx-otc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 991px) {
+  .gredoex .hero_online_banking {
+    padding: 140px 0 48px;
+    text-align: left;
+  }
+
+  .gredoex .hero_online_banking .hero_shape_image {
+    display: none;
+  }
+
+  .gx-hero-visual-mobile {
+    display: block;
+    margin-top: 28px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--color-secondary);
+    aspect-ratio: 4 / 5;
+  }
+
+  .gx-hero-visual-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gredoex .main_menu_list {
+    background-color: var(--color-primary);
+    gap: 0;
+  }
+
+  .gredoex .header_layout_1 .main_menu_list > li > a,
+  .gredoex .header_layout_1 .xb-header:not(.stricked-menu) .main_menu_list > li > a,
+  .gredoex .header_layout_1 .xb-header:not(.stricked-menu) .main_menu_list > li > a::after,
+  .gredoex .stricked-menu .main_menu_list > li > a {
+    color: var(--color-text-on-dark);
+    padding: 14px 10px;
+  }
+
+  .gredoex .stricked-menu .mobile_menu_btn {
+    background-color: var(--color-surface-elevated);
+  }
+
+  .gx-trust-list,
+  .gx-why-grid,
+  .gx-security-grid,
+  .gx-otc-grid,
+  .gx-app-points {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gx-split .gx-media {
+    min-height: 320px;
+    margin-bottom: 32px;
+  }
+
+  .gredoex .online_banking_review {
+    padding: 32px 22px;
+    margin-top: 0;
+  }
+
+  .gredoex .ob_process_section {
+    padding-bottom: 80px;
+  }
+
+  .gredoex .section_space {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gx-trust-list,
+  .gx-why-grid,
+  .gx-security-grid,
+  .gx-otc-grid,
+  .gx-app-points {
+    grid-template-columns: 1fr;
+  }
+
+  .gredoex .hero_online_banking .btns_group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gredoex .hero_online_banking .btns_group .btn,
+  .gredoex .gx-store-links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gredoex .site_header .btns_group > li:first-child {
+    display: block;
+  }
+
+  .gredoex .heading_block.style_2 .heading_text {
+    font-size: 32px;
+  }
+
+  .gx-products .image_block,
+  .gx-products .col-lg-4 .imagebox_block .image_block {
+    height: 160px;
+  }
+}
+
+@media (max-width: 700px) {
+  .gredoex .header_layout_1 .btns_group > li:last-child {
+    display: inline-block;
+  }
+
+  .gredoex .site_header .btn {
+    padding: 12px 16px;
+    min-height: 44px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 430px) {
+  .gredoex .hero_online_banking .hero_title {
+    font-size: 36px;
+  }
+
+  .gredoex .btn {
+    padding: 14px 20px;
+  }
+}
