@@ -167,11 +167,20 @@ export function LandingPage() {
               </div>
             </div>
           </div>
-          <div className="decoration_item icon_star_1">
-            <img src="/assets/images/icons/icon_star_4.svg" alt="Icon Star" />
+          <div className="decoration_item gx-hero-coin gx-hero-coin-btc" aria-hidden="true">
+            <i className="fa-brands fa-bitcoin"></i>
           </div>
-          <div className="decoration_item icon_star_2">
-            <img src="/assets/images/icons/icon_star_3.svg" alt="Icon Star" />
+          <div className="decoration_item gx-hero-coin gx-hero-coin-eth" aria-hidden="true">
+            <i className="fa-brands fa-ethereum"></i>
+          </div>
+          <div className="decoration_item gx-hero-coin gx-hero-coin-ngn" aria-hidden="true">
+            <i className="fa-solid fa-naira-sign"></i>
+          </div>
+          <div className="decoration_item gx-hero-coin gx-hero-coin-eur" aria-hidden="true">
+            <i className="fa-solid fa-euro-sign"></i>
+          </div>
+          <div className="decoration_item gx-hero-coin gx-hero-coin-gbp" aria-hidden="true">
+            <i className="fa-solid fa-sterling-sign"></i>
           </div>
           <div className="decoration_item shape_shadow_1">
             <img src="/assets/images/shapes/shape_circle_2.svg" alt="Shape Shadow 1" />

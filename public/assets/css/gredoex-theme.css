@@ -122,6 +122,146 @@ body {
   white-space: nowrap;
 }
 
+/* Hero currency ornaments (replaces spinning stars) */
+.online_banking .hero_online_banking .gx-hero-coin {
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 237, 255, 0.1);
+  background: rgba(217, 237, 255, 0.04);
+  color: rgba(217, 237, 255, 0.28);
+  font-size: 1.4rem;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  opacity: 0.72;
+  animation: gx-hero-coin-drift 7s ease-in-out infinite;
+}
+
+.online_banking .hero_online_banking .gx-hero-coin-btc {
+  top: 188px;
+  right: 92px;
+  color: rgba(247, 147, 26, 0.28);
+  border-color: rgba(247, 147, 26, 0.12);
+  background: rgba(247, 147, 26, 0.05);
+}
+
+.online_banking .hero_online_banking .gx-hero-coin-eth {
+  top: 132px;
+  left: 9%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.15rem;
+  color: rgba(98, 126, 234, 0.3);
+  border-color: rgba(98, 126, 234, 0.12);
+  background: rgba(98, 126, 234, 0.05);
+  animation-duration: 8s;
+  animation-delay: -1.4s;
+}
+
+.online_banking .hero_online_banking .gx-hero-coin-ngn {
+  top: 36%;
+  left: 4%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.05rem;
+  color: rgba(19, 220, 102, 0.26);
+  border-color: rgba(19, 220, 102, 0.12);
+  background: rgba(19, 220, 102, 0.04);
+  animation-duration: 9s;
+  animation-delay: -3s;
+}
+
+.online_banking .hero_online_banking .gx-hero-coin-eur {
+  top: 28%;
+  right: 38%;
+  width: 42px;
+  height: 42px;
+  font-size: 1rem;
+  color: rgba(217, 237, 255, 0.24);
+  border-color: rgba(217, 237, 255, 0.1);
+  background: rgba(217, 237, 255, 0.035);
+  animation-duration: 7.6s;
+  animation-delay: -2.2s;
+}
+
+.online_banking .hero_online_banking .gx-hero-coin-gbp {
+  top: 58%;
+  right: 18%;
+  width: 40px;
+  height: 40px;
+  font-size: 0.95rem;
+  color: rgba(217, 237, 255, 0.22);
+  border-color: rgba(217, 237, 255, 0.09);
+  background: rgba(217, 237, 255, 0.03);
+  animation-duration: 8.8s;
+  animation-delay: -4s;
+}
+
+@keyframes gx-hero-coin-drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .online_banking .hero_online_banking.has-globe > .decoration_item.gx-hero-coin {
+    display: inline-flex;
+    opacity: 0.55;
+  }
+
+  .online_banking .hero_online_banking .gx-hero-coin-btc {
+    top: 108px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+
+  .online_banking .hero_online_banking .gx-hero-coin-eth {
+    top: 96px;
+    left: 14px;
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .online_banking .hero_online_banking .gx-hero-coin-ngn {
+    top: 28%;
+    left: 10px;
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+  }
+
+  .online_banking .hero_online_banking .gx-hero-coin-eur,
+  .online_banking .hero_online_banking .gx-hero-coin-gbp {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .online_banking .hero_online_banking .gx-hero-coin-btc {
+    top: 96px;
+    right: 10px;
+  }
+
+  .online_banking .hero_online_banking .gx-hero-coin-eth {
+    top: 88px;
+    left: 10px;
+  }
+
+  .online_banking .hero_online_banking .gx-hero-coin-ngn {
+    left: 10px;
+  }
+}
+
 /* Mobile wallet integrations — production-ready chips */
 .online_banking .integrated_section .heading_description {
   max-width: 34rem;

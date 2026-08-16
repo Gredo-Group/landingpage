@@ -438,9 +438,13 @@
     padding-bottom: 28px;
   }
 
-  .hero_online_banking.has-globe > .decoration_item {
+  .hero_online_banking.has-globe > .decoration_item:not(.gx-hero-coin) {
     order: 4;
     display: none;
+  }
+
+  .hero_online_banking.has-globe > .decoration_item.gx-hero-coin {
+    order: 4;
   }
 
   .hero_online_banking.has-globe .hero_title {
@@ -520,6 +524,10 @@
   .integrated_wrapper .site_logo {
     animation: none;
     opacity: 1;
+  }
+
+  .online_banking .hero_online_banking .gx-hero-coin {
+    animation: none;
   }
 
   .online_banking_features .imagebox_block:hover,
