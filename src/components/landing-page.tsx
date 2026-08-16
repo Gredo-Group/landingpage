@@ -700,12 +700,18 @@ export function LandingPage() {
             <div className="integrated_wrapper">
               <ul className="unordered_list justify-content-center">
                 <li>
-                  <span className="gx-integration-chip">Airtime</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                    Airtime
+                  </span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <span className="gx-integration-chip">Mobile Data</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-signal" aria-hidden="true"></i>
+                    Mobile Data
+                  </span>
                   <svg width="194" height="74" viewBox="0 0 194 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M168.5 73.5V26C168.5 25.4477 168.052 25 167.5 25H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M193 73.5V2C193 1.44772 192.552 1 192 1H0.5" stroke="#DBDBDB" strokeDasharray="6 6"/>
@@ -716,17 +722,26 @@ export function LandingPage() {
                     <path className="path" d="M25.5 73.5V26C25.5 25.4477 25.9477 25 26.5 25H194" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M1 73.5V2C1 1.44772 1.44772 1 2 1H193.5" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <span className="gx-integration-chip">Electricity</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-bolt" aria-hidden="true"></i>
+                    Electricity
+                  </span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path_2" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path_2" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <span className="gx-integration-chip">Internet</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-wifi" aria-hidden="true"></i>
+                    Internet
+                  </span>
                 </li>
               </ul>
               <ul className="unordered_list justify-content-center">
                 <li>
-                  <span className="gx-integration-chip">Crypto Swaps</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-right-left" aria-hidden="true"></i>
+                    Crypto Swaps
+                  </span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
@@ -740,17 +755,26 @@ export function LandingPage() {
                     <path className="path_2" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path_2" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <span className="gx-integration-chip">OTC Desk</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-handshake" aria-hidden="true"></i>
+                    OTC Desk
+                  </span>
                 </li>
               </ul>
               <ul className="unordered_list justify-content-center">
                 <li>
-                  <span className="gx-integration-chip">Dollar Cards</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-credit-card" aria-hidden="true"></i>
+                    Dollar Cards
+                  </span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <span className="gx-integration-chip">Virtual Accounts</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-building-columns" aria-hidden="true"></i>
+                    Virtual Accounts
+                  </span>
                   <svg width="194" height="73" viewBox="0 0 194 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path" d="M168.5 0V47.5C168.5 48.0523 168.052 48.5 167.5 48.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M193 0V71.5C193 72.0523 192.552 72.5 192 72.5H0.5" stroke="#DBDBDB" strokeDasharray="6 6"/>
@@ -761,12 +785,18 @@ export function LandingPage() {
                     <path className="path" d="M25.5 0V47.5C25.5 48.0523 25.9477 48.5 26.5 48.5H194" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path" d="M1 0V71.5C1 72.0523 1.44772 72.5 2 72.5H193.5" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <span className="gx-integration-chip">Multi-currency</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-coins" aria-hidden="true"></i>
+                    Multi-currency
+                  </span>
                   <svg width="193" height="25" viewBox="0 0 193 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path className="path_2" d="M192.5 1H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                     <path className="path_2" d="M192.5 24.5H0" stroke="#DBDBDB" strokeDasharray="6 6"/>
                   </svg>
-                  <span className="gx-integration-chip">MPC Vault</span>
+                  <span className="gx-integration-chip">
+                    <i className="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    MPC Vault
+                  </span>
                 </li>
               </ul>
             </div>
