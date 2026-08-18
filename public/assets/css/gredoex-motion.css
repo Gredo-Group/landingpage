@@ -43,17 +43,15 @@
   bottom: -1%;
   width: min(920px, 58vw);
   max-width: none;
-  overflow: hidden;
   pointer-events: none;
 }
 
 .hero_online_banking.has-globe .hero_hand_image img {
-  width: 148%;
+  width: 100%;
   max-width: none;
   height: auto;
   display: block;
-  margin: -6% 0 -18% -24%;
-  transform-origin: 50% 40%;
+  transform-origin: 70% 100%;
   animation: gx-breathe 5.6s ease-in-out infinite;
 }
 
@@ -349,17 +347,17 @@
 
 @media (max-width: 1365px) {
   .hero_online_banking.has-globe .hero_hand_image {
-    width: min(640px, 50vw);
-    right: -4%;
-    bottom: -10%;
+    width: 56vw;
+    right: -8%;
+    bottom: -16%;
   }
 }
 
 @media (max-width: 1199px) {
   .hero_online_banking.has-globe .hero_hand_image {
-    width: min(560px, 46vw);
-    right: -2%;
-    bottom: -8%;
+    width: 54vw;
+    right: -10%;
+    bottom: -12%;
   }
 }
 
