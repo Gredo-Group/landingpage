@@ -212,53 +212,7 @@ body {
 
 @media screen and (max-width: 991px) {
   .online_banking .hero_online_banking.has-globe > .decoration_item.gx-hero-coin {
-    display: inline-flex;
-    opacity: 0.55;
-  }
-
-  .online_banking .hero_online_banking .gx-hero-coin-btc {
-    top: 108px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-    font-size: 0.95rem;
-  }
-
-  .online_banking .hero_online_banking .gx-hero-coin-eth {
-    top: 96px;
-    left: 14px;
-    width: 36px;
-    height: 36px;
-    font-size: 0.85rem;
-  }
-
-  .online_banking .hero_online_banking .gx-hero-coin-ngn {
-    top: 28%;
-    left: 10px;
-    width: 34px;
-    height: 34px;
-    font-size: 0.8rem;
-  }
-
-  .online_banking .hero_online_banking .gx-hero-coin-eur,
-  .online_banking .hero_online_banking .gx-hero-coin-gbp {
     display: none;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .online_banking .hero_online_banking .gx-hero-coin-btc {
-    top: 96px;
-    right: 10px;
-  }
-
-  .online_banking .hero_online_banking .gx-hero-coin-eth {
-    top: 88px;
-    left: 10px;
-  }
-
-  .online_banking .hero_online_banking .gx-hero-coin-ngn {
-    left: 10px;
   }
 }
 
