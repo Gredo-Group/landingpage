@@ -380,6 +380,69 @@ body {
   line-height: 1.55;
 }
 
+.online_banking .gx-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.online_banking .gx-legal-toc {
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: var(--bs-light);
+  border: 1px solid var(--gx-border);
+}
+
+.online_banking .gx-legal-toc .iconlist_block a {
+  color: var(--gx-navy);
+  font-weight: 600;
+}
+
+.online_banking .gx-legal-toc .iconlist_block a:hover {
+  color: var(--gx-green-pressed);
+}
+
+.online_banking .gx-legal-prose .gx-legal-section {
+  margin-bottom: 2.5rem;
+  padding-top: 0.5rem;
+  scroll-margin-top: 110px;
+}
+
+.online_banking .gx-legal-prose h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  color: var(--gx-navy);
+}
+
+.online_banking .gx-legal-prose p,
+.online_banking .gx-legal-prose li {
+  color: var(--gx-text-muted);
+  line-height: 1.75;
+}
+
+.online_banking .gx-legal-prose ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.online_banking .gx-legal-prose li + li {
+  margin-top: 0.45rem;
+}
+
+.online_banking .gx-legal-prose a {
+  color: var(--gx-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.online_banking .gx-legal-prose a:hover {
+  color: var(--gx-green-pressed);
+}
+
 @media (max-width: 991px) {
   .online_banking .gx-subpage-hero {
     padding: 150px 0 70px;

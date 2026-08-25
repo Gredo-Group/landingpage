@@ -3,33 +3,80 @@
 import { FormEvent, useState } from "react";
 
 const SUPPORT_EMAIL = "info@gredogroup.com";
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
+type SubmitState = "idle" | "loading" | "success" | "error";
 
 export function DeleteAccountPage() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [reason, setReason] = useState("");
   const [confirm, setConfirm] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [botcheck, setBotcheck] = useState("");
+  const [status, setStatus] = useState<SubmitState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!email.trim() || !confirm) return;
+    if (!email.trim() || !confirm || status === "loading") return;
 
-    const subject = encodeURIComponent("GredoEx account deletion request");
-    const body = encodeURIComponent(
-      [
-        "I request deletion of my GredoEx account and associated personal data.",
-        "",
-        `Account email: ${email.trim()}`,
-        phone.trim() ? `Phone / account ID: ${phone.trim()}` : "Phone / account ID: (not provided)",
-        reason.trim() ? `Additional notes: ${reason.trim()}` : "Additional notes: (none)",
-        "",
-        "I understand this action is permanent and that some records may be retained where required by law or for fraud prevention, as described on the deletion page.",
-      ].join("\n"),
-    );
+    const accessKey = "3edff8e5-22ef-4a5c-a3b7-466fd57b7a13";
+    if (!accessKey) {
+      setStatus("error");
+      setErrorMessage("Form is not configured yet. Please email us directly.");
+      return;
+    }
 
-    window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setStatus("loading");
+    setErrorMessage("");
+
+    const message = [
+      "Account deletion request from gredoex.com/delete-account",
+      "",
+      `Account email: ${email.trim()}`,
+      `Phone / account ID: ${phone.trim() || "(not provided)"}`,
+      `Additional notes: ${reason.trim() || "(none)"}`,
+      "",
+      "User confirmed they understand deletion is permanent.",
+    ].join("\n");
+
+    try {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: "GredoEx account deletion request",
+          from_name: "GredoEx Website",
+          email: email.trim(),
+          phone: phone.trim() || "Not provided",
+          message,
+          botcheck,
+        }),
+      });
+
+      const result = (await response.json()) as { success?: boolean; message?: string };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Unable to submit your request.");
+      }
+
+      setStatus("success");
+      setEmail("");
+      setPhone("");
+      setReason("");
+      setConfirm(false);
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again or email us directly.",
+      );
+    }
   }
 
   return (
@@ -153,13 +200,23 @@ export function DeleteAccountPage() {
                     </p>
                   </div>
 
-                  {submitted ? (
+                  {status === "success" ? (
                     <div className="alert alert-success mb-0" role="status">
-                      Your mail app should open with a pre-filled deletion request. Send that message to complete the request.
-                      If nothing opened, email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> directly.
+                      Your deletion request was sent. We will follow up at the email you provided after verifying ownership of the account.
                     </div>
                   ) : (
                     <form className="gx-delete-form" onSubmit={handleSubmit} noValidate>
+                      <input
+                        type="checkbox"
+                        name="botcheck"
+                        className="gx-honeypot"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        checked={Boolean(botcheck)}
+                        onChange={(event) => setBotcheck(event.target.checked ? "1" : "")}
+                        aria-hidden="true"
+                      />
+
                       <div className="row">
                         <div className="col-md-6 mb-3">
                           <label className="form-label" htmlFor="delete_email">
@@ -198,7 +255,7 @@ export function DeleteAccountPage() {
                           <textarea
                             id="delete_reason"
                             className="form-control"
-                            name="reason"
+                            name="message"
                             rows={4}
                             value={reason}
                             onChange={(event) => setReason(event.target.value)}
@@ -220,13 +277,26 @@ export function DeleteAccountPage() {
                             </label>
                           </div>
                         </div>
+
+                        {status === "error" ? (
+                          <div className="col-12 mb-3">
+                            <div className="alert alert-danger mb-0" role="alert">
+                              {errorMessage}{" "}
+                              You can also email{" "}
+                              <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+                            </div>
+                          </div>
+                        ) : null}
+
                         <div className="col-12">
                           <button
                             className="btn bg-primary text-dark rounded-pill"
                             type="submit"
-                            disabled={!email.trim() || !confirm}
+                            disabled={!email.trim() || !confirm || status === "loading"}
                           >
-                            <span className="btn_label">Submit deletion request</span>
+                            <span className="btn_label">
+                              {status === "loading" ? "Sending…" : "Submit deletion request"}
+                            </span>
                           </button>
                         </div>
                       </div>
@@ -341,6 +411,11 @@ export function DeleteAccountPage() {
                     <li>
                       <a href="/delete-account">
                         <span className="iconlist_text">Delete Account</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/privacy-policy">
+                        <span className="iconlist_text">Privacy Policy</span>
                       </a>
                     </li>
                     <li>

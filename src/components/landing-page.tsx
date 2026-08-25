@@ -1024,7 +1024,7 @@ export function LandingPage() {
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
+                      <a href="/privacy-policy">
                         <span className="iconlist_text">Privacy Policy</span>
                       </a>
                     </li>
