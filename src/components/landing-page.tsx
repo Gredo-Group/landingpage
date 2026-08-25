@@ -1014,6 +1014,11 @@ export function LandingPage() {
                 <div className="col-lg-6">
                   <ul className="iconlist_block mb-0 unordered_list justify-content-lg-end">
                     <li>
+                      <a href="/delete-account">
+                        <span className="iconlist_text">Delete Account</span>
+                      </a>
+                    </li>
+                    <li>
                       <a href="#!">
                         <span className="iconlist_text">Terms & Conditions</span>
                       </a>

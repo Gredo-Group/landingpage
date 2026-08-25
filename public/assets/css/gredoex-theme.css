@@ -303,3 +303,90 @@ body {
     width: 100%;
   }
 }
+
+/* Subpages (delete account, legal) — match main site chrome */
+.online_banking .gx-subpage-hero {
+  padding: 180px 0 90px;
+  min-height: 0;
+}
+
+.online_banking .gx-subpage-hero .hero_title {
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.online_banking .gx-subpage-lead {
+  max-width: 40rem;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.92;
+}
+
+.online_banking .gx-delete-panel {
+  padding: 40px 36px;
+  border-radius: 16px;
+}
+
+.online_banking .gx-delete-steps > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.online_banking .gx-delete-steps .iconlist_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  background: rgba(19, 220, 102, 0.14);
+  color: var(--gx-green-pressed);
+}
+
+.online_banking .gx-delete-steps .iconlist_label {
+  color: var(--gx-text-muted);
+  line-height: 1.65;
+}
+
+.online_banking .gx-delete-form .form-label {
+  font-weight: 600;
+  color: var(--gx-navy);
+}
+
+.online_banking .gx-delete-form .form-control {
+  border-radius: 12px;
+  border-color: var(--gx-border);
+  padding: 0.85rem 1rem;
+  color: var(--gx-navy);
+  background: #fff;
+}
+
+.online_banking .gx-delete-form .form-control:focus {
+  border-color: rgba(19, 220, 102, 0.55);
+  box-shadow: 0 0 0 0.2rem rgba(19, 220, 102, 0.15);
+}
+
+.online_banking .gx-delete-form .form-check-input:checked {
+  background-color: var(--gx-green);
+  border-color: var(--gx-green);
+}
+
+.online_banking .gx-delete-form .form-check-label {
+  color: var(--gx-text-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 991px) {
+  .online_banking .gx-subpage-hero {
+    padding: 150px 0 70px;
+    text-align: center;
+  }
+
+  .online_banking .gx-delete-panel {
+    padding: 28px 20px;
+  }
+}
