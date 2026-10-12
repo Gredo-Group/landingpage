@@ -2,6 +2,7 @@
 
 import { WorldGlobe } from "@/src/components/world-globe";
 import { ScrollEffects } from "@/src/components/scroll-effects";
+import { WaitlistModal } from "@/src/components/waitlist-modal";
 
 export function LandingPage() {
   return (
@@ -9,6 +10,7 @@ export function LandingPage() {
 {/* Body Wrap - Start */}
     <div className="page_wrapper">
       <ScrollEffects />
+      <WaitlistModal />
 
       {/* Back To Top - Start */}
       <div className="backtotop">
@@ -91,6 +93,12 @@ export function LandingPage() {
                     <a className="btn bg-secondary text-white rounded-pill" href="#!">
                       <span className="btn_icon"><i className="fa-brands fa-android"></i></span>
                       <span className="btn_label">Android</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a className="btn bg-primary text-dark rounded-pill" href="#waitlist">
+                      <span className="btn_icon"><i className="fa-solid fa-bell"></i></span>
+                      <span className="btn_label">Join the Waitlist</span>
                     </a>
                   </li>
                   <li>
@@ -840,6 +848,12 @@ export function LandingPage() {
                     <a className="btn bg-dark rounded-pill" href="#!">
                       <span className="btn_icon"><i className="fa-brands fa-android"></i></span>
                       <span className="btn_label">Android</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a className="btn bg-primary text-dark rounded-pill" href="#waitlist">
+                      <span className="btn_icon"><i className="fa-solid fa-bell"></i></span>
+                      <span className="btn_label">Join the Waitlist</span>
                     </a>
                   </li>
                 </ul>

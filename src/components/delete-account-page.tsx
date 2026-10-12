@@ -1,9 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { submitWeb3Form } from "@/src/lib/web3forms";
 
 const SUPPORT_EMAIL = "info@gredogroup.com";
-const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
 
@@ -20,13 +20,6 @@ export function DeleteAccountPage() {
     event.preventDefault();
     if (!email.trim() || !confirm || status === "loading") return;
 
-    const accessKey = "3edff8e5-22ef-4a5c-a3b7-466fd57b7a13";
-    if (!accessKey) {
-      setStatus("error");
-      setErrorMessage("Form is not configured yet. Please email us directly.");
-      return;
-    }
-
     setStatus("loading");
     setErrorMessage("");
 
@@ -41,28 +34,14 @@ export function DeleteAccountPage() {
     ].join("\n");
 
     try {
-      const response = await fetch(WEB3FORMS_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: accessKey,
-          subject: "GredoEx account deletion request",
-          from_name: "GredoEx Website",
-          email: email.trim(),
-          phone: phone.trim() || "Not provided",
-          message,
-          botcheck,
-        }),
+      await submitWeb3Form({
+        subject: "GredoEx account deletion request",
+        from_name: "GredoEx Website",
+        email: email.trim(),
+        phone: phone.trim() || "Not provided",
+        message,
+        botcheck,
       });
-
-      const result = (await response.json()) as { success?: boolean; message?: string };
-
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || "Unable to submit your request.");
-      }
 
       setStatus("success");
       setEmail("");
@@ -191,21 +170,20 @@ export function DeleteAccountPage() {
 
             <div className="row justify-content-center mt-5">
               <div className="col-lg-8">
-                <div className="content_wrap bg-light gx-delete-panel">
-                  <div className="heading_block style_2 mb-4">
-                    <div className="badge text-uppercase text-dark bg-dark-subtle">Request</div>
-                    <h2 className="heading_text mb-2">Submit a deletion request</h2>
+                <div className="comment_form gx-delete-panel">
+                  <div className="heading_block">
+                    <h2 className="heading_text">Submit a deletion request</h2>
                     <p className="heading_description mb-0">
                       No app login is required. We use these details only to locate and delete your account.
                     </p>
                   </div>
 
                   {status === "success" ? (
-                    <div className="alert alert-success mb-0" role="status">
+                    <p className="heading_description mb-0" role="status">
                       Your deletion request was sent. We will follow up at the email you provided after verifying ownership of the account.
-                    </div>
+                    </p>
                   ) : (
-                    <form className="gx-delete-form" onSubmit={handleSubmit} noValidate>
+                    <form onSubmit={handleSubmit} noValidate>
                       <input
                         type="checkbox"
                         name="botcheck"
@@ -216,54 +194,56 @@ export function DeleteAccountPage() {
                         onChange={(event) => setBotcheck(event.target.checked ? "1" : "")}
                         aria-hidden="true"
                       />
-
                       <div className="row">
-                        <div className="col-md-6 mb-3">
-                          <label className="form-label" htmlFor="delete_email">
-                            Account email *
-                          </label>
-                          <input
-                            id="delete_email"
-                            className="form-control"
-                            type="email"
-                            name="email"
-                            autoComplete="email"
-                            required
-                            value={email}
-                            onChange={(event) => setEmail(event.target.value)}
-                            placeholder="Email registered on GredoEx"
-                          />
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label className="input_title" htmlFor="delete_email">
+                              Account email<sup>*</sup>
+                            </label>
+                            <input
+                              id="delete_email"
+                              className="form-control"
+                              type="email"
+                              name="email"
+                              autoComplete="email"
+                              required
+                              value={email}
+                              onChange={(event) => setEmail(event.target.value)}
+                              placeholder="Email registered on GredoEx"
+                            />
+                          </div>
                         </div>
-                        <div className="col-md-6 mb-3">
-                          <label className="form-label" htmlFor="delete_phone">
-                            Phone or account ID (optional)
-                          </label>
-                          <input
-                            id="delete_phone"
-                            className="form-control"
-                            type="text"
-                            name="phone"
-                            value={phone}
-                            onChange={(event) => setPhone(event.target.value)}
-                            placeholder="Helps us verify faster"
-                          />
+                        <div className="col-md-6">
+                          <div className="form-group">
+                            <label className="input_title" htmlFor="delete_phone">
+                              Phone or account ID
+                            </label>
+                            <input
+                              id="delete_phone"
+                              className="form-control"
+                              type="text"
+                              name="phone"
+                              value={phone}
+                              onChange={(event) => setPhone(event.target.value)}
+                              placeholder="Optional"
+                            />
+                          </div>
                         </div>
-                        <div className="col-12 mb-3">
-                          <label className="form-label" htmlFor="delete_reason">
-                            Additional notes (optional)
-                          </label>
-                          <textarea
-                            id="delete_reason"
-                            className="form-control"
-                            name="message"
-                            rows={4}
-                            value={reason}
-                            onChange={(event) => setReason(event.target.value)}
-                            placeholder="Anything that helps us locate your account"
-                          />
-                        </div>
-                        <div className="col-12 mb-4">
-                          <div className="form-check">
+                        <div className="col-12">
+                          <div className="form-group">
+                            <label className="input_title" htmlFor="delete_reason">
+                              Additional notes
+                            </label>
+                            <textarea
+                              id="delete_reason"
+                              className="form-control"
+                              name="message"
+                              value={reason}
+                              onChange={(event) => setReason(event.target.value)}
+                              placeholder="Anything that helps us locate your account (optional)"
+                            />
+                          </div>
+                          <div className="form-group form-check">
                             <input
                               id="delete_confirm"
                               className="form-check-input"
@@ -276,21 +256,16 @@ export function DeleteAccountPage() {
                               I understand that deleting my GredoEx account is permanent and that I will lose access to wallets, cards, and transaction history after deletion is completed.
                             </label>
                           </div>
-                        </div>
 
-                        {status === "error" ? (
-                          <div className="col-12 mb-3">
-                            <div className="alert alert-danger mb-0" role="alert">
-                              {errorMessage}{" "}
-                              You can also email{" "}
+                          {status === "error" ? (
+                            <p className="gx-form-error" role="alert">
+                              {errorMessage} You can also email{" "}
                               <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
-                            </div>
-                          </div>
-                        ) : null}
+                            </p>
+                          ) : null}
 
-                        <div className="col-12">
                           <button
-                            className="btn bg-primary text-dark rounded-pill"
+                            className="btn text-dark"
                             type="submit"
                             disabled={!email.trim() || !confirm || status === "loading"}
                           >
